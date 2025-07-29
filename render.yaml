@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: moodle-api-app
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn app:app"
+    envVars:
+      - key: MOODLE_TOKEN
+        value: xxxxxxxxxxxxxx
+      - key: MOODLE_URL
+        value: https://yourmoodle.com/webservice/rest/server.php
